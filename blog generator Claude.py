@@ -47,9 +47,10 @@ def generate_blog_post(supporting_text_path):
     response = client.messages.create(
         max_tokens=1024,
         messages=[
-            {"role": "user", "content": system_prompt + f" Generate a detailed outline about {topic} including an Introduction, {subtopics_count} detailed subtopics, and a Conclusion. Ensure each main section and subtopic starts with '**Section' for clarity. Include examples and references from experts. Be sure to cite sources."}
+            {"role": "user", "content": f" Generate a detailed outline about {topic} including an Introduction, {subtopics_count} detailed subtopics, and a Conclusion. Ensure each main section and subtopic starts with '**Section' for clarity. Include examples and references from experts. Be sure to cite sources."}
         ],
         model="claude-3-opus-20240229",
+        system=system_prompt
     )
     # Extracting text from the response object
     outline = '\n'.join(text_block.text for text_block in response.content)
@@ -62,13 +63,14 @@ def generate_blog_post(supporting_text_path):
         file.write(outline)
 
     # Generate the full blog post based on the outline
-    full_post_prompt = system_prompt + f" Now write a detailed blog post based on the following outline:\n{outline}\nAim for approximately {words_per_section * subtopics_count} words."
+    full_post_prompt = f" Now write a detailed blog post based on the following outline:\n{outline}\nAim for approximately {words_per_section * subtopics_count} words."
     response = client.messages.create(
         max_tokens=3000,
         messages=[
             {"role": "user", "content": full_post_prompt}
         ],
         model="claude-3-opus-20240229",
+        system=system_prompt
     )
     full_post_content = '\n'.join([text_block.text for text_block in response.content])
     print("Full blog post generated successfully.")
