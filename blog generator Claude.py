@@ -31,12 +31,12 @@ def generate_blog_post(supporting_text_path):
             return
 
     # Gather user inputs about blog details and preferences
-    topic = input("Please desrcibe the topic of your blog and its intended audience: ")
+    topic = input("Please describe the topic of your blog and its intended audience: ")
     subtopics_count = int(input("Enter the number of subtopics: "))
     words_per_section = int(input("Enter the desired word count per section: "))
-    blogger_identity = input("Please briefly describe what kind of blogger you are (e.g., tech, health, etc.) and your background: ")
+    blogger_identity = input("Please share a few words about your blog (e.g., tech, health, etc.) and your background: ")
     writing_style = input("Enter your preferred writing style (conversational, formal, informal): ")
-    word_choice = input("Enter any specific word choice preferences (e.g., use 'use' instead of 'utilize'): ")
+    word_choice = input("List any specific word choice preferences (e.g., use 'use' instead of 'utilize'): ")
     print(f"Generating an outline for the topic '{topic}' with {subtopics_count} subtopics, aiming for {words_per_section} words per section.")
 
     # Detailed system prompt based on the advanced template, including supporting content
