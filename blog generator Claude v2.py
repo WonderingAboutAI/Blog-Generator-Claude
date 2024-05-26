@@ -4,11 +4,10 @@ from dotenv import load_dotenv
 from anthropic import Anthropic
 
 # Load environment variables from .env file
-dotenv_path = '/Users/karenspinner/Documents/Python_scripts/Anthropic_Exploration/ANTHROPIC_API_KEY.env'
+dotenv_path = 'ANTHROPIC_API_KEY.env'
 load_dotenv(dotenv_path=dotenv_path)
 
 api_key = os.getenv('ANTHROPIC_API_KEY')
-print("API Key:", api_key)  # Check what is printed
 
 if not api_key:
     print("Error loading API key. Please check your .env file.")
@@ -21,14 +20,6 @@ client = Anthropic(api_key=api_key)
 supporting_text_path = 'content.txt'
 
 def generate_blog_post(supporting_text_path):
-    # Use the API key from the environment variables
-    client.api_key = os.getenv('ANTHROPIC_API_KEY')
-    if client.api_key:
-        print("API key loaded successfully.")
-    else:
-        print("Error loading API key. Please check your .env file.")
-        return
-
     # Load supporting content from the text file
     supporting_content = ""
     if supporting_text_path:
