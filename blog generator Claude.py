@@ -16,6 +16,8 @@ if not api_key:
 # Initialize the Anthropic client with the API key
 client = Anthropic(api_key=api_key)
 
+supporting_text_path = 'content.txt'  # Specify the path to your supporting text file
+
 def generate_blog_post(supporting_text_path):
     # Load supporting content from the text file
     supporting_content = ""
@@ -82,6 +84,5 @@ def generate_blog_post(supporting_text_path):
 
     return outline_filename, text_filename
 
-# Example usage
-supporting_text_path = 'content.txt'  # Specify the path to your supporting text file
+# Run the function
 generate_blog_post(supporting_text_path)
