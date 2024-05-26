@@ -1,5 +1,5 @@
 # Blog-Generator-Claude
-**Version 1** of this Python script prompts Claude to first generate a blog outline and then a complete blog post baded on the outline. The system prompt includes information on the blogger's preferred audience and voice as well as writing samples and style guidance drawn from a text file.
+**Version 1** of this Python script prompts Claude to first generate a blog outline and then a complete blog post based on the outline. The system prompt includes information on the blogger's preferred audience and voice as well as writing samples and style guidance drawn from a text file.
 
 **Version 2** prompts Claude to generare posts by feeding it one section of the outline at a time. It also saves the outline and blog copy in a .csv file with columns named Section Name, Blog Content, and Outline Content and supports the same system detailed system prompt described above.
 
