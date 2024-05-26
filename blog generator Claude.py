@@ -8,7 +8,6 @@ dotenv_path = 'Path to ANTHROPIC_API_KEY.env'
 load_dotenv(dotenv_path=dotenv_path)
 
 api_key = os.getenv('ANTHROPIC_API_KEY')
-print("API Key:", api_key)  # Check what is printed
 
 if not api_key:
     print("Error loading API key. Please check your .env file.")
@@ -33,7 +32,7 @@ def generate_blog_post(supporting_text_path):
     topic = input("Please desrcibe the topic of your blog and its intended audience: ")
     subtopics_count = int(input("Enter the number of subtopics: "))
     words_per_section = int(input("Enter the desired word count per section: "))
-    blogger_identity = input("Please describe what kind of blogger you are (e.g., tech, health, etc.) and provide a short description of your background: ")
+    blogger_identity = input("Please briefly describe what kind of blogger you are (e.g., tech, health, etc.) and your background: ")
     writing_style = input("Enter your preferred writing style (conversational, formal, informal): ")
     word_choice = input("Enter any specific word choice preferences (e.g., use 'use' instead of 'utilize'): ")
     print(f"Generating an outline for the topic '{topic}' with {subtopics_count} subtopics, aiming for {words_per_section} words per section.")
