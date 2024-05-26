@@ -119,5 +119,5 @@ def generate_blog_post(supporting_text_path):
 
     return csv_filename, text_filename
 
-# Example usage
+# Run function
 generate_blog_post(supporting_text_path=supporting_text_path)
